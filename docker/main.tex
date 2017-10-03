@@ -1,0 +1,167 @@
+\documentclass{beamer}
+ 
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} 
+\graphicspath{{img/}}
+
+\usetheme{Copenhagen} 
+\title{Containers in a nutshell}
+\author{Simone Lombardi}
+\institute{HCSSLUG | hcsslug.org}
+\date{27 Ottobre 2017}
+%\logo{\includegraphics[height=0.5cm]{hcsslug.png}}  
+\begin{document}
+ 
+\frame{\titlepage}
+
+\begin{frame}
+    \frametitle{Introduzione}
+    \begin{center}
+        Cosa sono i container? 
+    \end{center}
+\end{frame}
+
+% --------------------------------
+
+\begin{frame}
+    \frametitle{Introduzione}
+        I container sono un environment di esecuzione self-contained: hanno a disposizione le loro risorse 
+        e condividono con il sistema host il kernel.
+\end{frame}
+
+% --------------------------------
+     
+\begin{frame}
+    \frametitle{Vantaggi dei container}
+    I container portano numerosi vantaggi: 
+    \begin{itemize}
+        \item<1-> Portabilit\`a
+    \item<2-> Sharing 
+        \item<3-> Velocit\`a di deploy 
+        \item<4-> Footprint
+        \item<5-> Manutenzione
+    \end{itemize}
+\end{frame}
+
+% --------------------------------
+
+\begin{frame}
+    \frametitle{Qualche nome...}
+    I progetti pi\`u famosi sono: 
+    \begin{itemize}
+        \item<1-> LXC
+        \item<2-> LXD
+        \item<3-> Docker
+    \end{itemize}
+\end{frame}
+
+% --------------------------------
+
+\begin{frame}
+    \frametitle{Docker in a nutshell}
+    \begin{center}    
+        \includegraphics{{docker_logo.png}}
+    \end{center}
+\end{frame}
+
+% --------------------------------
+
+\begin{frame}
+    \frametitle{Docker in a nutshell}
+    Docker \`e un progetto FOSS che permette di automatizzare il deploy di applicazioni in un Linux Container, mettendo a disposizione molti tool per rendere 
+    le operazioni di gestione rapide e intuitive. 
+\end{frame}
+
+% --------------------------------
+
+\begin{frame}
+    \frametitle{Come funziona Docker?} 
+    \begin{itemize}
+        \item<1-> \textbf{cgroups}
+        \item<2-> \textbf{namespaces}
+        \item<3-> \textbf{OverlayFS}
+        \item<4-> \textbf{libcontainer}
+    \end{itemize}
+\end{frame}
+
+% --------------------------------
+
+\begin{frame}
+    \frametitle{Perch\`e Docker?}
+    Provvede all'isolamento degli applicativi, inoltre l'effort per configurare un container `base` \`e minimo. 
+    \begin{itemize}
+        \item<1-> Creazione e distruzione dei container molto rapida. 
+        \item<2-> Velocit\`a e leggerezza
+        \item<3-> Risorse condivise col sistema Host
+    \end{itemize}
+\end{frame}
+
+% ---------------------------------
+
+\begin{frame}
+    \frametitle{Svantaggi di Docker}
+    \begin{center}
+        \textbf{Confronto con le VM}
+    \end{center}
+    \begin{itemize}
+        \item<1-> Le VM possono essere `spostate` mentre sono in esecuzione. 
+        \item<2-> I Container \textbf{NON} rimpiazzano le VM in ogni caso.
+        \item<3-> Valutare sempre gli USE Case!
+    \end{itemize}
+\end{frame}
+
+% --------------------------------
+
+\begin{frame}
+    \frametitle{Un piccolo assaggio}
+    Docker pu\`o buildare immagini leggendo un set di istruzioni da un file, chiamato \texbf{Dockerfile}.
+    In questo file possiamo definire il comportamento del container, usando varie features implementate:
+    \begin{itemize}
+        \item<1-> Volumes
+        \item<2-> Expose
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Dockerfile}
+    \begin{center}
+        \includegraphics[width=10cm,height=10cm,keepaspectratio]{dockerfile.png}
+        \\ \textbf{In figura:} Esempio di Dockerfile
+    \end{center}
+\end{frame}
+
+% --------------------------------
+
+\begin{frame}
+    \frametitle{Container multipli}
+    Vi sono a disposizione innumerevoli tool per gestire applicativi multi-container contemporaneamente, \`e qui che entra in gioco \textbf{Docker Compose}.
+\end{frame}
+
+% --------------------------------
+
+\begin{frame}
+    \frametitle{Docker Compose}
+    Compose \`e un tool per definire e avviare pi\`u container, definiti in un file .yaml, ha molte features interessanti:
+    \begin{itemize}
+        \item<1-> Environments isolati su un singolo host
+        \item<2-> I dati dei volumi sono preservati
+        \item<3-> \`E possibile ricreare solo i container modificati
+        \item<4-> Sostituzioni Variabili
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Conclusione}
+    Docker \`e uno strumento molto potente che permette davvero di organizzare il proprio workflow in maniera pulita ed ottimizzata.
+    L'unico limite \`e la fantasia.
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Fine}
+    \begin{center}
+        \textbf{Grazie a tutti per l'attenzione :D}
+    \end{center}
+\end{frame}
+\end{document}
+
