@@ -36,7 +36,7 @@
     I container portano numerosi vantaggi: 
     \begin{itemize}
         \item<1-> Portabilit\`a
-    \item<2-> Sharing 
+        \item<2-> Sharing 
         \item<3-> Velocit\`a di deploy 
         \item<4-> Footprint
         \item<5-> Manutenzione
@@ -52,6 +52,7 @@
         \item<1-> LXC
         \item<2-> LXD
         \item<3-> Docker
+        \item<4-> systemd-nspawn
     \end{itemize}
 \end{frame}
 
@@ -68,8 +69,8 @@
 
 \begin{frame}
     \frametitle{Docker in a nutshell}
-    Docker \`e un progetto FOSS che permette di automatizzare il deploy di applicazioni in un Linux Container, mettendo a disposizione molti tool per rendere 
-    le operazioni di gestione rapide e intuitive. 
+    Docker \`e un progetto FOSS che estende i Linux container permettendo di buildare e deployare applicativi, usando solo le dipendenze runtime. 
+    Mette a disposizione molti tool per gestire i container.
 \end{frame}
 
 % --------------------------------
@@ -117,10 +118,13 @@
     Docker pu\`o buildare immagini leggendo un set di istruzioni da un file, chiamato \texbf{Dockerfile}.
     In questo file possiamo definire il comportamento del container, usando varie features implementate:
     \begin{itemize}
-        \item<1-> Volumes
-        \item<2-> Expose
+        \item<1-> Volumi
+        \item<2-> NAT 
+        \item<3-> Port forwarding
     \end{itemize}
 \end{frame}
+
+% --------------------------------
 
 \begin{frame}
     \frametitle{Dockerfile}
@@ -150,12 +154,27 @@
     \end{itemize}
 \end{frame}
 
+% --------------------------------
+
 \begin{frame}
-    \frametitle{Conclusione}
-    Docker \`e uno strumento molto potente che permette davvero di organizzare il proprio workflow in maniera pulita ed ottimizzata.
-    L'unico limite \`e la fantasia.
+    \frametitle{Docker Hub}
+    Docker Hub \`e un piattaforma che permette di creare repository, buildare immagini e testarle, linkandole a Docker Cloud in modo da permettere 
+    il deploy rapido di container.
+    \newline
+    \begin{center}
+        https://hub.docker.com
+    \end{center}
 \end{frame}
 
+% --------------------------------
+
+\begin{frame}
+    \frametitle{Conclusione}
+    Docker \`e uno strumento molto versatile, permette di gestire workflow e infrastrutture in maniera pulita e davvero intuitiva. Le casistiche di utilizzo
+    sono molteplici, come per ogni tipo di strumento, bisogna sempre valutarne i pro e i contro.
+\end{frame}
+
+% --------------------------------
 
 \begin{frame}
     \frametitle{Fine}
@@ -163,5 +182,7 @@
         \textbf{Grazie a tutti per l'attenzione :D}
     \end{center}
 \end{frame}
-\end{document}
 
+% --------------------------------
+
+\end{document}
