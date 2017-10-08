@@ -9,23 +9,16 @@
 \author{Simone Lombardi}
 \institute{HCSSLUG | hcsslug.org}
 \date{27 Ottobre 2017}
-%\logo{\includegraphics[height=0.5cm]{hcsslug.png}}  
+\logo{\includegraphics[height=0.5cm]{hcsslug.png}}  
 \begin{document}
  
 \frame{\titlepage}
 
-\begin{frame}
-    \frametitle{Introduzione}
-    \begin{center}
-        Cosa sono i container? 
-    \end{center}
-\end{frame}
-
 % --------------------------------
 
 \begin{frame}
-    \frametitle{Introduzione}
-        I container sono un environment di esecuzione self-contained: hanno a disposizione le loro risorse 
+    \frametitle{Cosa sono i container?}
+        I container sono un environment di esecuzione completo ed isolato: hanno a disposizione le loro risorse 
         e condividono con il sistema host il kernel.
 \end{frame}
 
@@ -51,8 +44,8 @@
     \begin{itemize}
         \item<1-> LXC
         \item<2-> LXD
-        \item<3-> Docker
-        \item<4-> systemd-nspawn
+        \item<3-> systemd-nspawn 
+        \item<4-> Docker 
     \end{itemize}
 \end{frame}
 
@@ -89,29 +82,15 @@
 
 \begin{frame}
     \frametitle{Perch\`e Docker?}
-    Provvede all'isolamento degli applicativi, inoltre l'effort per configurare un container `base` \`e minimo. 
     \begin{itemize}
-        \item<1-> Creazione e distruzione dei container molto rapida. 
-        \item<2-> Velocit\`a e leggerezza
-        \item<3-> Risorse condivise col sistema Host
+        \item<1-> Isolamento degli applicativi
+        \item<2-> Creazione e distruzione dei container molto rapida. 
+        \item<3-> Velocit\`a e leggerezza
+        \item<4-> Risorse condivise col sistema Host
     \end{itemize}
 \end{frame}
 
 % ---------------------------------
-
-\begin{frame}
-    \frametitle{Svantaggi di Docker}
-    \begin{center}
-        \textbf{Confronto con le VM}
-    \end{center}
-    \begin{itemize}
-        \item<1-> Le VM possono essere `spostate` mentre sono in esecuzione. 
-        \item<2-> I Container \textbf{NON} rimpiazzano le VM in ogni caso.
-        \item<3-> Valutare sempre gli USE Case!
-    \end{itemize}
-\end{frame}
-
-% --------------------------------
 
 \begin{frame}
     \frametitle{Un piccolo assaggio}
@@ -145,7 +124,7 @@
 
 \begin{frame}
     \frametitle{Docker Compose}
-    Compose \`e un tool per definire e avviare pi\`u container, definiti in un file .yaml, ha molte features interessanti:
+    \`E un tool per definire e avviare pi\`u container, definiti in un file .yaml, con molte features interessanti:
     \begin{itemize}
         \item<1-> Environments isolati su un singolo host
         \item<2-> I dati dei volumi sono preservati
@@ -158,12 +137,26 @@
 
 \begin{frame}
     \frametitle{Docker Hub}
-    Docker Hub \`e un piattaforma che permette di creare repository, buildare immagini e testarle, linkandole a Docker Cloud in modo da permettere 
+    \`E un piattaforma che permette di creare repository, buildare immagini e testarle, linkandole a Docker Cloud in modo da permettere 
     il deploy rapido di container.
     \newline
     \begin{center}
         https://hub.docker.com
     \end{center}
+\end{frame}
+
+% --------------------------------
+
+\begin{frame}
+    \frametitle{Svantaggi di Docker}
+    \begin{center}
+        \textbf{Confronto con le VM}
+    \end{center}
+    \begin{itemize}
+        \item<1-> Le VM possono essere `spostate` mentre sono in esecuzione. 
+        \item<2-> I Container \textbf{NON} rimpiazzano le VM in ogni caso.
+        \item<3-> Valutare sempre gli USE Case!
+    \end{itemize}
 \end{frame}
 
 % --------------------------------
