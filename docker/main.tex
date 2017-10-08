@@ -7,7 +7,11 @@
 \usetheme{Copenhagen} 
 \title{Containers in a nutshell}
 \author{Simone Lombardi}
-\institute{HCSSLUG | hcsslug.org}
+\institute[HCSSLUG]{
+    \textbf{HCSSLUG} - \textit{hcsslug.org}
+    \newline
+    \textit{https://smlb.github.io}
+}
 \date{27 Ottobre 2017}
 \logo{\includegraphics[height=0.5cm]{hcsslug.png}}  
 \begin{document}
@@ -157,6 +161,17 @@
         \item<2-> I Container \textbf{NON} rimpiazzano le VM in ogni caso.
         \item<3-> Valutare sempre gli USE Case!
     \end{itemize}
+\end{frame}
+
+% --------------------------------
+
+\begin{frame}
+    \frametitle{Docker vs VM}
+    \includegraphics[width=5cm,height=5cm,keepaspectratio]{{docker_layers.png}}
+    \includegraphics[width=5cm,height=5cm,keepaspectratio]{{vm.png}}
+    \begin{center}
+        \textbf{In figura:} Layer effettivi
+    \end{center}
 \end{frame}
 
 % --------------------------------
