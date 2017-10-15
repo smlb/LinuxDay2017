@@ -79,6 +79,7 @@
         \item<2-> \textbf{namespaces}
         \item<3-> \textbf{OverlayFS}
         \item<4-> \textbf{libcontainer}
+        \item<5-> \textbf{SELinux}
     \end{itemize}
 \end{frame}
 
@@ -98,13 +99,9 @@
 
 \begin{frame}
     \frametitle{Un piccolo assaggio}
-    Docker pu\`o buildare immagini leggendo un set di istruzioni da un file, chiamato \texbf{Dockerfile}.
-    In questo file possiamo definire il comportamento del container, usando varie features implementate:
-    \begin{itemize}
-        \item<1-> Volumi
-        \item<2-> NAT 
-        \item<3-> Port forwarding
-    \end{itemize}
+    Docker pu\`o buildare immagini leggendo un set di istruzioni da un file, chiamato \textbf{Dockerfile}.
+    In questo file possiamo definire il comportamento del container e quello che verr\`a eseguito.
+    
 \end{frame}
 
 % --------------------------------
@@ -115,6 +112,28 @@
         \includegraphics[width=10cm,height=10cm,keepaspectratio]{dockerfile.png}
         \\ \textbf{In figura:} Esempio di Dockerfile
     \end{center}
+\end{frame}
+
+% ---------------------------------
+
+\begin{frame}
+    \frametitle{Dockerfile: spiegazione}
+    \begin{itemize}
+        \item<1->\textbf{FROM}: definisce l'img di base per avviare il processo di build.
+        \item<2->\textbf{RUN}: le direttive di esecuzione per il Dockerfile.
+        \item<3->\textbf{ADD}: copia i file dalla source dell'host al path specificato nel container.
+        \item<4->\textbf{EXPOSE}: specifica la porta su cui verranno esposti i servizi dal container.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}    
+    \frametitle{Altre istruzioni}
+    \begin{itemize}
+        \item<1-> \textbf{CMD}: a differenza di \textbf{RUN}, non \`e eseguito durante la build ma quando il container \`e inizializzato con l'immagine buildata.
+        \item<2-> \textbf{ENV}: usato per settare le variabili di ambiente. 
+        \item<3-> \textbf{WORKDIR}: definisce dove \textbf{CMD} sar\`a eseguito. 
+        \item<4-> \textbf{ENTRYPOINT} 
+    \end{itemize}
 \end{frame}
 
 % --------------------------------
@@ -133,7 +152,6 @@
         \item<1-> Environments isolati su un singolo host
         \item<2-> I dati dei volumi sono preservati
         \item<3-> \`E possibile ricreare solo i container modificati
-        \item<4-> Sostituzioni Variabili
     \end{itemize}
 \end{frame}
 
